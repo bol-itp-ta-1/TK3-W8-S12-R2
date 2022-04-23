@@ -66,11 +66,16 @@ public class Main {
                 yourAnswer[level][i] = answer;
             }
 
-            System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers\n");
+            System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers");
 
             if (totalCorrectAnswer < 7) {
+                System.out.println();
                 return askingForRestart();
             }
+
+            System.out.println("Correct Answer : ");
+            Arrays.asList(correctAnswer[level]).forEach(e -> System.out.print(e + "    "));
+            System.out.println("\n");
 
             totalScore += totalCorrectAnswer * 10;
         }

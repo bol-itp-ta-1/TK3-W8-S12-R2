@@ -36,6 +36,8 @@ public class Main {
         }};
         String[][] yourAnswer = new String[question.length][10];
 
+        int totalScore = 0;
+
         for (int level = 0; level < question.length; level++) {
             System.out.println("Level " + (level + 1));
             System.out.println("==========");
@@ -56,6 +58,10 @@ public class Main {
             }
 
             System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers");
+            totalScore += totalCorrectAnswer * 10;
         }
+
+        System.out.println("Overall score: " + totalScore);
+        System.out.println("You WIN!!");
     }
 }

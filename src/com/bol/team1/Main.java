@@ -4,10 +4,19 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    private static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        boolean isRestart = true;
 
+        while (isRestart) {
+            isRestart = runProgram();
+        }
+
+        System.exit(0);
+    }
+
+    private static boolean runProgram() {
         System.out.println("Coepoe Word Puzzle");
         System.out.println("====================");
 
@@ -57,11 +66,25 @@ public class Main {
                 yourAnswer[level][i] = answer;
             }
 
-            System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers");
+            System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers\n");
+
+            if (totalCorrectAnswer < 7) {
+                return askingForRestart();
+            }
+
             totalScore += totalCorrectAnswer * 10;
         }
 
         System.out.println("Overall score: " + totalScore);
         System.out.println("You WIN!!");
+
+        return false;
+    }
+
+    private static boolean askingForRestart() {
+        System.out.println("You Lose!! Try Again..");
+        System.out.print("Do you want to retry [y/t]? ");
+        String choose = input.next();
+        return choose.equals("y") || choose.equals("Y");
     }
 }

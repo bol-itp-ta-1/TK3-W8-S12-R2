@@ -18,30 +18,44 @@ public class Main {
                 3. To get through to next level you have to score 70 points each level.
                 """);
 
-        System.out.println("Level 1");
-        System.out.println("==========");
-        System.out.println("\nd       e       t       t       l       i\n");
-
-        String[] correctAnswer = {
+        String[][] question = {{
+                "d", "e", "t", "t", "l", "i",
+        }, {
+                "s", "e", "c", "a", "e", "n",
+        }, {
+                "h", "k", "r", "n", "e", "o",
+        }};
+        String[][] correctAnswer = {{
                 "die", "led", "lei", "let", "lid", "lie", "lit", "tie", "deli", "diet",
                 "edit", "idle", "lied", "tide", "tied", "tilt", "tilde", "tiled", "title",
                 "tilted", "titled",
-        };
-        String[] yourAnswer = new String[10];
-        int totalCorrectAnswer = 0;
+        }, {
+                "sec", "can", "cane", "scan", "scene", "case", "cease"
+        }, {
+                "honk", "honker", "roe", "ore", "her", "hen", "one"
+        }};
+        String[][] yourAnswer = new String[question.length][10];
 
-        for (int i = 0; i < yourAnswer.length; i++) {
-            System.out.print(i + 1 + "> Your Answer : ");
-            String answer = input.next();
+        for (int level = 0; level < question.length; level++) {
+            System.out.println("Level " + (level + 1));
+            System.out.println("==========");
+            Arrays.asList(question[level]).forEach(e -> System.out.print(e + "      "));
+            System.out.println("\n");
 
-            if (Arrays.asList(correctAnswer).contains(answer) && !Arrays.asList(yourAnswer).contains(answer)) {
-                totalCorrectAnswer += 1;
-                System.out.println("#Right. Score : " + totalCorrectAnswer * 10);
+            int totalCorrectAnswer = 0;
+            for (int i = 0; i < yourAnswer[level].length; i++) {
+                System.out.print(i + 1 + "> Your Answer : ");
+                String answer = input.next();
+
+                if (Arrays.asList(correctAnswer[level]).contains(answer) && !Arrays.asList(yourAnswer[level]).contains(answer)) {
+                    totalCorrectAnswer += 1;
+                    System.out.println("#Right. Score : " + totalCorrectAnswer * 10);
+                }
+
+                yourAnswer[level][i] = answer;
             }
 
-            yourAnswer[i] = answer;
+            System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers");
         }
-
-        System.out.println("\nYou had answered " + yourAnswer.length + " times with " + totalCorrectAnswer + " right answers");
     }
 }

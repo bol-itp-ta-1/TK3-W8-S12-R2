@@ -39,7 +39,9 @@ public class Main {
                 "edit", "idle", "lied", "tide", "tied", "tilt", "tilde", "tiled", "title",
                 "tilted", "titled",
         }, {
-                "sec", "can", "cane", "scan", "scene", "case", "cease"
+                "sec", "can", "cane", "scan", "scene", "case", "cease", "encase", "seance",
+                "seneca", "acne", "canes", "cease", "scan", "aces", "cees", "ace", "sac",
+                "sea", "see"
         }, {
                 "hen", "honk", "honker", "her", "hen", "hero", "horn", "hoe", "krone", "neo",
                 "nor", "ore", "one", "roe",

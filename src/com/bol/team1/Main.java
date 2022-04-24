@@ -41,7 +41,8 @@ public class Main {
         }, {
                 "sec", "can", "cane", "scan", "scene", "case", "cease"
         }, {
-                "honk", "honker", "roe", "ore", "her", "hen", "one"
+                "hen", "honk", "honker", "her", "hen", "hero", "horn", "hoe", "krone", "neo",
+                "nor", "ore", "one", "roe",
         }};
         String[][] yourAnswer = new String[question.length][10];
 
